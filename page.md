@@ -1,3 +1,6 @@
+---
+layout:default
+title:TeacherName/Pathway
 ## About the pathway
 - level 1
 -  
