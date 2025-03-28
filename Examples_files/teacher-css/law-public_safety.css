@@ -24,7 +24,7 @@
     --body-text-color: #000000; /* text color */
     --body-header-text-color: #000000; /* header 1 color */
     --body-background-color: #4987c7; /* background color */
-    --body-hr-color: #000000 /* line color */
+    --body-hr-color: #eee /* line color */
 }
 
 .color-scheme-switch {
