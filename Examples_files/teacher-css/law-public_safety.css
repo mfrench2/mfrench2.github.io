@@ -38,8 +38,8 @@
 }
 
 .footer-wrapper {
-    --footer-background-color: #efefef;
-    --footer-text-color: #6B6B6B
+    --footer-background-color: #efefef; /* footer background color */
+    --footer-text-color: #6B6B6B /* footer text color */
 }
 
 .lang-switch {
