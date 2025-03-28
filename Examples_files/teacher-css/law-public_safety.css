@@ -141,7 +141,7 @@
 }
 
 .markdown-style {
-    --markdown-styles-header-text-color: #5f5e5e; /* header 4 color */
+    --markdown-styles-header-text-color: #000000; /* header 4 color */
     --markdown-styles-table-border-color: #ddd;
     --markdown-styles-blockquote-background-color: #eee;
     --markdown-styles-blockquote-side-color: #416289;
