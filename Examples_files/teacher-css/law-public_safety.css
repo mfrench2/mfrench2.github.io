@@ -39,7 +39,7 @@
 
 .footer-wrapper {
     --footer-background-color: var(--body-background-color); /* footer background color */
-    --footer-text-color: var(--body-header-text-color) /* footer text color */
+    --footer-text-color: #fff /* footer text color */
 }
 
 .lang-switch {
