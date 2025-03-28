@@ -21,10 +21,10 @@
 :root {
     --body-anchor-text-color: #206EBC;
     --body-anchor-hover-text-color: #2f6597;
-    --body-text-color: #6a6a6a; /* text color */
-    --body-header-text-color: #5f5e5e; /* header 1 color */
-    --body-background-color: #efefef; /* background color */
-    --body-hr-color: #eee /* line color */
+    --body-text-color: #000000; /* text color */
+    --body-header-text-color: #000000; /* header 1 color */
+    --body-background-color: #0A4D92; /* background color */
+    --body-hr-color: #000000 /* line color */
 }
 
 .color-scheme-switch {
@@ -38,8 +38,8 @@
 }
 
 .footer-wrapper {
-    --footer-background-color: #efefef; /* footer background color */
-    --footer-text-color: #6B6B6B /* footer text color */
+    --footer-background-color: var(--body-background-color); /* footer background color */
+    --footer-text-color: var(--body-header-text-color) /* footer text color */
 }
 
 .lang-switch {
