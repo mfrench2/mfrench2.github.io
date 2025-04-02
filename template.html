@@ -143,28 +143,32 @@
                     <hr>
                     <h4 id="paragraphs">Pathway/Course Name</h4>
                     <p>Pathway/course information.</p>
-
+                    
+                    <!-- Script for slideshow -->
                     <script>
                         function startSlideshow() {
-                            let slideIndex = 0;
-                            const slides = document.querySelectorAll(".pathway-image");
-                
-                            function showSlide() {
-                                slides.forEach(slide => slide.classList.remove("active"));
-                                slides[slideIndex].classList.add("active");
-                                slideIndex = (slideIndex + 1) % slides.length;
+                            const slideshowImage = document.getElementById("slideshow-image");
+                            const imageUrls = ["image1.jpg", "image2.jpg", "image3.jpg"]; 
+                            let imageIndex = 0;
+                        
+                            function changeImage() {
+                                slideshowImage.classList.add("fade-out"); 
+                                setTimeout(() => {
+                                    slideshowImage.src = imageUrls[imageIndex];
+                                    slideshowImage.classList.remove("fade-out");
+                                    slideshowImage.classList.add("fade-in"); 
+                                    imageIndex = (imageIndex + 1) % imageUrls.length;
+                                }, 1000); 
                             }
-                
-                            showSlide(); 
-                            setInterval(showSlide, 3000); 
+                        
+                            changeImage();
+                            setInterval(changeImage, 4000); 
                         }
-                
-                        window.onload = startSlideshow; 
+
+                        window.onload = startSlideshow;
                     </script>
                     
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png" alt="Pathway Image 1" class="pathway-image">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small_2x/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" alt="Pathway Image 2" class="pathway-image">
-                    <img src="https://images.ctfassets.net/ihx0a8chifpc/GTlzd4xkx4LmWsG1Kw1BB/ad1834111245e6ee1da4372f1eb5876c/placeholder.com-1280x720.png?w=1280&q=60&fm=webp" alt="Pathway Image 3" class="pathway-image">
+                    <img id="slideshow-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png" alt="Pathway Image"> <!-- Image slideshow -->
                 </div>
     <!-- ---------------- -->
 
