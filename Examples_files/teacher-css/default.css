@@ -2785,6 +2785,6 @@ footer {
     border-radius: 10px;
     max-width: 100%;
     height: auto;
-    display: none;
+    display: block;
     margin: 20px auto;
 }
