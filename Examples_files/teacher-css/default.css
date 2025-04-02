@@ -2780,3 +2780,11 @@ footer {
         margin-right: unset
     }
 }
+
+.pathway-image {
+    border-radius: 10px; 
+    max-width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 20px auto; 
+}
