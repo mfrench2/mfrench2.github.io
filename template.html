@@ -148,23 +148,23 @@
                     <script>
                         function startSlideshow() {
                             const slideshowImage = document.getElementById("slideshow-image");
-                            const imageUrls = ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png", "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"]; 
+                            const imageUrls = ["image1.jpg", "image2.jpg", "image3.jpg"];
                             let imageIndex = 0;
                         
                             function changeImage() {
-                                slideshowImage.classList.add("fade-out"); 
+                                slideshowImage.classList.add("fade-out");
                                 setTimeout(() => {
                                     slideshowImage.src = imageUrls[imageIndex];
                                     slideshowImage.classList.remove("fade-out");
-                                    slideshowImage.classList.add("fade-in"); 
+                                    slideshowImage.classList.add("fade-in");
                                     imageIndex = (imageIndex + 1) % imageUrls.length;
-                                }, 1000); 
+                                }, 1000);
                             }
                         
                             changeImage();
-                            setInterval(changeImage, 4000); 
+                            setInterval(changeImage, 4000);
                         }
-
+                        
                         window.onload = startSlideshow;
                     </script>
                     
