@@ -2781,46 +2781,10 @@ footer {
     }
 }
 
-/*
 .pathway-image {
     border-radius: 10px;
     max-width: 100%;
     height: auto;
     display: none;
     margin: 20px auto;
-}
-
-.pathway-image.active {
-    display: block; 
-}
-*/
-
-#slideshow-container {
-    width: 400px;
-    height: 300px;
-    overflow: hidden;
-    margin: 20px auto;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-#slideshow-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; 
-    transition: opacity 1s ease-in-out;
-}
-
-#slideshow-image.fade-out {
-    opacity: 0;
-}
-
-#slideshow-image.fade-in {
-    opacity: 1;
-}
-
-#slideshow-image.fade-in {
-    opacity: 1;
 }

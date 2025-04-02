@@ -144,34 +144,8 @@
                     <h4 id="paragraphs">Pathway/Course Name</h4>
                     <p>Pathway/course information.</p>
                     
-                    <!-- Script for slideshow -->
-                    <script>
-                        function startSlideshow() {
-                            const slideshowImage = document.getElementById("slideshow-image");
-                            const imageUrls = ["https://placehold.co/600x400/EEE/31343C", "https://placehold.co/100x400/EEE/31343C", "https://placehold.co/400x400/EEE/31343C"]; // The image paths go here.
-                            let imageIndex = 0;
-                        
-                            function changeImage() {
-                                slideshowImage.classList.add("fade-out");
-                                setTimeout(() => {
-                                    slideshowImage.src = imageUrls[imageIndex];
-                                    slideshowImage.classList.remove("fade-out");
-                                    slideshowImage.classList.add("fade-in");
-                                    imageIndex = (imageIndex + 1) % imageUrls.length;
-                                }, 1000);
-                            }
-                        
-                            changeImage();
-                            setInterval(changeImage, 4000);
-                        }
-                        
-                        window.onload = startSlideshow;
-                    </script>
-                    
-                    <!-- Image slideshow -->
-                    <div id="slideshow-container">
-                        <img id="slideshow-image" src="" alt="Pathway Image"> <!-- src is first image -->
-                    </div>
+                    <!-- Image -->
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Rounded Image" class="pathway-image">
                 </div>
     <!-- ---------------- -->
 
