@@ -2782,9 +2782,13 @@ footer {
 }
 
 .pathway-image {
-    border-radius: 10px; 
-    max-width: 100%; 
+    border-radius: 10px;
+    max-width: 100%;
     height: auto;
+    display: none;
+    margin: 20px auto;
+}
+
+.pathway-image.active {
     display: block; 
-    margin: 20px auto; 
 }
