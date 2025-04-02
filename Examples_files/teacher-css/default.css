@@ -2795,12 +2795,19 @@ footer {
 }
 */
 
-#slideshow-image {
-    border-radius: 10px;
-    max-width: 100%;
-    height: auto;
+#slideshow-container {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
     margin: 20px auto;
-    transition: opacity 1s ease-in-out; 
+    border-radius: 10px;
+}
+
+#slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
 }
 
 #slideshow-image.fade-out {
