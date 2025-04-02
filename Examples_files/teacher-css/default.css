@@ -2781,6 +2781,7 @@ footer {
     }
 }
 
+/*
 .pathway-image {
     border-radius: 10px;
     max-width: 100%;
@@ -2791,4 +2792,21 @@ footer {
 
 .pathway-image.active {
     display: block; 
+}
+*/
+
+#slideshow-image {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    transition: opacity 1s ease-in-out; 
+}
+
+#slideshow-image.fade-out {
+    opacity: 0;
+}
+
+#slideshow-image.fade-in {
+    opacity: 1;
 }
