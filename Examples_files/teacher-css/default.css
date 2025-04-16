@@ -540,7 +540,6 @@
 html {
     height: 100%;
     overflow-y: auto;
-    overflow-x: clip;
     font-size: 10px
 }
 
@@ -786,6 +785,7 @@ footer {
     position: fixed;
     height: 100%;
     overflow-y: auto;
+    overflow-x: clip;
     z-index: 1000;
     left: 0;
     top: 0;
