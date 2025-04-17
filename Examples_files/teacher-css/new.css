@@ -791,6 +791,7 @@ footer {
     top: 0;
     border-right: solid 1px var(--side-nav-right-border-color);
     text-align: center;
+    scrollbar-color: #000 #000;
 }
 
 .side-nav {
