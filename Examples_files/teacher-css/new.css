@@ -790,7 +790,7 @@ footer {
     left: 0;
     top: 0;
     border-right: solid 1px var(--side-nav-right-border-color);
-    text-align: center
+    text-align: center;
 }
 
 .side-nav {
