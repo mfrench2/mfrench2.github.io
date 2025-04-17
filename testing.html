@@ -3,95 +3,102 @@
 
 <head>
       <style>
-        /* Style for the password popup container */
-        #password-popup-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Ensure it's on top of everything */
-        }
-    
-        /* Style for the password popup content */
-        #password-popup {
-            background-color: #f8f8f8; /* Light background similar to the theme */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-    
-        #password-input {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            width: 200px;
-        }
-    
-        #password-button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff; /* Example primary color */
-            color: white;
-            cursor: pointer;
-        }
-    
-        #password-button:hover {
-            background-color: #0056b3;
-        }
-    
-        .hidden {
-            display: none !important;
-        }
-    </style>
-    
-    <div id="password-popup-container">
-        <div id="password-popup">
-            <h4>Password Required</h4>
-            <input type="password" id="password-input" placeholder="Enter Password">
-            <button id="password-button">Submit</button>
-            <div id="password-error" style="color: red; margin-top: 10px;" class="hidden">Incorrect password.</div>
-        </div>
-    </div>
-    
-    <script>
-        const passwordContainer = document.getElementById('password-popup-container');
-        const passwordInput = document.getElementById('password-input');
-        const passwordButton = document.getElementById('password-button');
-        const passwordError = document.getElementById('password-error');
-        const topNav = document.getElementById('top-nav');
-        const sideNavContainer = document.getElementById('side-nav-container');
-        const tocContainer = document.getElementById('toc-container');
-        const mainWrapper = document.getElementById('main-wrapper');
-    
-        const correctPassword = "yourpassword"; // Replace with your desired password
-    
-        passwordButton.addEventListener('click', () => {
-            const enteredPassword = passwordInput.value;
-            if (enteredPassword === correctPassword) {
-                passwordContainer.classList.add('hidden');
-                if (topNav) topNav.classList.remove('hidden');
-                if (sideNavContainer) sideNavContainer.classList.remove('hidden');
-                if (tocContainer) tocContainer.classList.remove('hidden');
-                if (mainWrapper) mainWrapper.classList.remove('hidden');
-            } else {
-                passwordError.classList.remove('hidden');
-            }
-        });
-    
-        // Initially hide the main content
-        if (topNav) topNav.classList.add('hidden');
-        if (sideNavContainer) sideNavContainer.classList.add('hidden');
-        if (tocContainer) tocContainer.classList.add('hidden');
-        if (mainWrapper) mainWrapper.classList.add('hidden');
-    </script>
+          /* Style to block the entire page */
+          body {
+              overflow: hidden; /* Prevent scrolling */
+          }
+      
+          /* Style for the password popup container to cover the whole viewport */
+          #password-popup-container {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: white; /* Fully white background */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              z-index: 1001; /* Higher z-index to be on top of everything */
+          }
+      
+          /* Style for the password popup content */
+          #password-popup {
+              background-color: #f8f8f8; /* Light background for the popup */
+              padding: 20px;
+              border-radius: 5px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+              text-align: center;
+          }
+      
+          #password-input {
+              padding: 10px;
+              margin-bottom: 15px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              width: 200px;
+          }
+      
+          #password-button {
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              background-color: #007bff; /* Example primary color */
+              color: white;
+              cursor: pointer;
+          }
+      
+          #password-button:hover {
+              background-color: #0056b3;
+          }
+      
+          .hidden {
+              display: none !important;
+          }
+      
+          /* Initially hide all elements except the popup container */
+          body > *:not(#password-popup-container) {
+              display: none !important;
+          }
+      </style>
+      
+      <div id="password-popup-container">
+          <div id="password-popup">
+              <h4>Password Required</h4>
+              <input type="password" id="password-input" placeholder="Enter Password">
+              <button id="password-button">Submit</button>
+              <div id="password-error" style="color: red; margin-top: 10px;" class="hidden">Incorrect password.</div>
+          </div>
+      </div>
+      
+      <script>
+          const passwordContainer = document.getElementById('password-popup-container');
+          const passwordInput = document.getElementById('password-input');
+          const passwordButton = document.getElementById('password-button');
+          const passwordError = document.getElementById('password-error');
+      
+          const correctPassword = "yourpassword"; // Replace with your desired password
+      
+          passwordButton.addEventListener('click', () => {
+              const enteredPassword = passwordInput.value;
+              if (enteredPassword === correctPassword) {
+                  passwordContainer.style.display = 'none'; // Hide the popup container
+                  document.body.style.overflow = 'auto'; // Allow scrolling again
+                  // Show all direct children of the body that were initially hidden
+                  const bodyChildren = document.body.children;
+                  for (let i = 0; i < bodyChildren.length; i++) {
+                      if (bodyChildren[i].id !== 'password-popup-container') {
+                          bodyChildren[i].style.display = ''; // Revert to their default display
+                      }
+                  }
+              } else {
+                  passwordError.classList.remove('hidden');
+              }
+          });
+      
+          // Prevent scrolling initially
+          document.body.style.overflow = 'hidden';
+      </script>
   
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
