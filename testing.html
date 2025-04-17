@@ -56,8 +56,11 @@
               display: none !important;
           }
       
-          /* Initially hide all elements except the popup container */
-          body > *:not(#password-popup-container) {
+          /* Initially hide the specific content elements */
+          #top-nav,
+          #side-nav-container,
+          #toc-container,
+          #main-wrapper {
               display: none !important;
           }
       </style>
@@ -76,6 +79,10 @@
           const passwordInput = document.getElementById('password-input');
           const passwordButton = document.getElementById('password-button');
           const passwordError = document.getElementById('password-error');
+          const topNav = document.getElementById('top-nav');
+          const sideNavContainer = document.getElementById('side-nav-container');
+          const tocContainer = document.getElementById('toc-container');
+          const mainWrapper = document.getElementById('main-wrapper');
       
           const correctPassword = "yourpassword"; // Replace with your desired password
       
@@ -84,13 +91,11 @@
               if (enteredPassword === correctPassword) {
                   passwordContainer.style.display = 'none'; // Hide the popup container
                   document.body.style.overflow = 'auto'; // Allow scrolling again
-                  // Show all direct children of the body that were initially hidden
-                  const bodyChildren = document.body.children;
-                  for (let i = 0; i < bodyChildren.length; i++) {
-                      if (bodyChildren[i].id !== 'password-popup-container') {
-                          bodyChildren[i].style.display = ''; // Revert to their default display
-                      }
-                  }
+                  // Show the specific content elements
+                  if (topNav) topNav.style.display = '';
+                  if (sideNavContainer) sideNavContainer.style.display = '';
+                  if (tocContainer) tocContainer.style.display = '';
+                  if (mainWrapper) mainWrapper.style.display = '';
               } else {
                   passwordError.classList.remove('hidden');
               }
