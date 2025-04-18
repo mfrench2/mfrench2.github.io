@@ -808,7 +808,8 @@ footer {
 }
 
 .side-nav-brand {
-    text-align: center
+    text-align: center;
+    margin-right: 15px;
 }
 
 .side-nav-brand>img {
