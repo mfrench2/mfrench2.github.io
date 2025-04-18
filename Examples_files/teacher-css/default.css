@@ -620,7 +620,7 @@ img {
 }
 
 hr {
-    border-top-color: var(--body-hr-color)
+    border-top-color: #ffffff;
 }
 
 #main-wrapper {
